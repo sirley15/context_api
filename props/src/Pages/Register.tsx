@@ -8,7 +8,8 @@ const Register : React.FC = () =>{
 
     const {register} = userUser ()
     
-    const guardar = async () => {
+    const guardar = async (event : React.FormEvent) => {
+        event.preventDefault()
         await register (email,password)
     }
     return(
@@ -16,7 +17,7 @@ const Register : React.FC = () =>{
             <form onSubmit={guardar}>
                 <input type="email" onChange={(event)=>setEmail(event.target.value)} />
                 <input type="password" onChange={(event)=>setPassword(event.target.value)}/>
-                <button type="submit">guardar</button>
+                <button type="submit">Registrarse</button>
             </form>
         </div>
 

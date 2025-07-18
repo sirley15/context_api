@@ -11,7 +11,7 @@ export const UserProvider = ({children}) => { //el reactnode es cuando esta el s
     const register = async (email:string,password:string) => {
         const res = await fetch('http://localhost:3333/register',{
             method : 'POST',
-            headers :{'content-Type' : 'aplication/json'},
+            headers :{'Content-Type' : 'application/json'},
             body : JSON.stringify({email,password})
         })
         const datos = await res.json()
@@ -26,7 +26,7 @@ export const UserProvider = ({children}) => { //el reactnode es cuando esta el s
     const login = async(email:string,password:string) =>{
         const res = await fetch ('http://localhost:3333/login',{
              method : 'POST',
-            headers :{'content-Type' : 'aplication/json'},
+            headers :{'Content-Type' : 'application/json'},
             body : JSON.stringify({email,password})
         })
         const datos = await res.json()
